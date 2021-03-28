@@ -1,65 +1,33 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <>
+      <div className="bg-cover" style={{ backgroundImage: `url("/mobile_stretch.jpg")`, height: `80vh` }}>
+        <Head>
+          <title>Hong Fitness</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <nav className="text-white">
+          <Link href="/">
+            <div className="flex justify-between py-4 mx-8">
+              <a>HONG FONUA</a>
+              <GiHamburgerMenu />
+            </div>
+          </Link>
+        </nav>
+        <div className="flex" style={{height: `50vh`}}>
+          <h1 className="text-5xl text-white align-center mx-auto self-center">HONG FONUA</h1>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </div>
+      <ul className="flex flex-col text-white">
+        <button className="w-10/12 text-pink-300 border-pink-300 py-2 my-2 mx-auto hover:bg-pink-300 hover:text-white" style={{border: `2px solid pink`}}>FITNESS GUIDES</button>
+        <button className="w-10/12 text-pink-300 border-pink-300 py-2 my-2 mx-auto hover:bg-pink-300 hover:text-white" style={{border: `2px solid pink`}}>PRODUCTS</button>
+        <button className="w-10/12 text-pink-300 border-pink-300 py-2 my-2 mx-auto hover:bg-pink-300 hover:text-white" style={{border: `2px solid pink`}}>NUTRITION E-BOOK</button>
+        <button className="w-10/12 text-pink-300 border-pink-300 py-2 my-2 mx-auto hover:bg-pink-300 hover:text-white" style={{border: `2px solid pink`}}>BUNDLES</button>
+      </ul>
+    </>
   )
 }
